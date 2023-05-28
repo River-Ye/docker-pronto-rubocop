@@ -7,4 +7,6 @@ RUN apt-get update \
     && apt-get clean
 RUN gem install pronto pronto-rubocop
 
+WORKDIR /data
+
 CMD pronto run
