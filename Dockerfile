@@ -1,7 +1,10 @@
 FROM ruby:3.2.2
-RUN apt-get update && apt-get install -y cmake
-COPY Gemfile Gemfile
-RUN gem install specific_install
-RUN gem specific_install https://github.com/prontolabs/pronto-rubocop.git
-RUN bundle install
-CMD git fetch origin master && pronto run -c origin/master --exit-code
+
+LABEL maintainer "River Ye <river@riverye.com>"
+
+RUN apt-get update \
+    && apt-get install -y cmake \
+    && apt-get clean
+RUN gem install pronto pronto-rubocop
+
+CMD pronto run
