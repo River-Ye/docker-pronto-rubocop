@@ -5,5 +5,5 @@ $ docker buildx build --platform linux/amd64,linux/arm64 -t riverye/docker-pront
 
 ## How to use
 ```
-$ docker run --rm -v $PWD:/data -w /data riverye/docker-pronto-rubocop:latest pronto run
+$ docker run --rm -v $PWD:/data -w /data riverye/docker-pronto-rubocop:v1.0.0 pronto run
 ```
