@@ -1,4 +1,4 @@
-FROM ruby:3.2.2
+FROM ruby:3.2.3
 
 LABEL maintainer "River Ye <river@riverye.com>"
 
