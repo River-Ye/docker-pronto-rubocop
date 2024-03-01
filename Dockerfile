@@ -1,11 +1,17 @@
-FROM ruby:3.2.3
+FROM ruby:3.3.0-alpine3.19
 
 LABEL maintainer "River Ye <river@riverye.com>"
 
-RUN apt-get update \
-    && apt-get install -y cmake \
-    && apt-get clean
-RUN gem install pronto pronto-rubocop faraday-retry
+RUN set -eux; \
+    apk add --no-cache \
+    cmake \
+    make \
+    build-base \
+    heimdal-dev \
+    openssl-dev \
+    ;
+
+RUN gem install pronto pronto-rubocop pronto-flay faraday-retry
 
 WORKDIR /data
 
