@@ -11,7 +11,7 @@ RUN set -eux; \
     openssl-dev \
     ;
 
-RUN gem install pronto pronto-rubocop pronto-flay faraday-retry
+RUN gem install bundler pronto pronto-rubocop faraday-retry
 
 WORKDIR /data
 
